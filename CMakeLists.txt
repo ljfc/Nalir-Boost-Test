@@ -12,7 +12,7 @@ set (lib_headers
 )
 
 # Add a library target to the build system
-boost_library_project(
+ryppl_library_project(
   test
   SRCDIRS  src 
   TESTDIRS  test
