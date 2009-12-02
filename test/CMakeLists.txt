@@ -17,10 +17,10 @@ ryppl_test_run(class_properties_test DEPENDS boost_unit_test_framework SHARED)
 ryppl_test_run(basic_cstring_test DEPENDS boost_unit_test_framework)
 
 # Program execution monitor tests
-ryppl_test_run_fail(prg_exec_fail1 DEPENDS ryppl_prg_exec_monitor)
-ryppl_test_run_fail(prg_exec_fail2 DEPENDS ryppl_prg_exec_monitor)
-ryppl_test_run_fail(prg_exec_fail3 DEPENDS ryppl_prg_exec_monitor)
-ryppl_test_run_fail(prg_exec_fail4 DEPENDS ryppl_prg_exec_monitor)
+ryppl_test_run_fail(prg_exec_fail1 DEPENDS boost_prg_exec_monitor)
+ryppl_test_run_fail(prg_exec_fail2 DEPENDS boost_prg_exec_monitor)
+ryppl_test_run_fail(prg_exec_fail3 DEPENDS boost_prg_exec_monitor)
+ryppl_test_run_fail(prg_exec_fail4 DEPENDS boost_prg_exec_monitor)
 
 # Unit test framework tests
 # NOTE: skipped errors_handling_test until I figure out what BBv2 is doing
@@ -46,4 +46,4 @@ ryppl_test_run(fixed_mapping_test DEPENDS boost_unit_test_framework SHARED)
 
 ryppl_test_run(algorithms_test DEPENDS boost_unit_test_framework)
 ryppl_test_run(token_iterator_test DEPENDS boost_unit_test_framework SHARED)
-ryppl_test_run(ryppl_check_equal_str DEPENDS boost_unit_test_framework SHARED)
+ryppl_test_run(boost_check_equal_str DEPENDS boost_unit_test_framework SHARED)
