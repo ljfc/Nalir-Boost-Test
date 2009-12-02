@@ -18,13 +18,13 @@ if (BORLAND)
   add_definitions(-w-8080)
 endif(BORLAND)
 
-ryppl_add_library(prg_exec_monitor 
+ryppl_add_library(boost_prg_exec_monitor 
   execution_monitor.cpp 
   debug.cpp 
   cpp_main.cpp 
   SHARED_COMPILE_FLAGS -DBOOST_TEST_DYN_LINK=1 ${BOOST_SHARED_COMPILE_FLAGS})
 
-ryppl_add_library(test_exec_monitor
+ryppl_add_library(boost_test_exec_monitor
   compiler_log_formatter.cpp
   debug.cpp
   execution_monitor.cpp
@@ -42,10 +42,9 @@ ryppl_add_library(test_exec_monitor
   unit_test_suite.cpp
   xml_log_formatter.cpp
   xml_report_formatter.cpp
-  NO_SHARED
   )
 
-ryppl_add_library(unit_test_framework
+ryppl_add_library(boost_unit_test_framework
     compiler_log_formatter.cpp
     debug.cpp
     exception_safety.cpp

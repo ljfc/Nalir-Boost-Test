@@ -13,8 +13,8 @@ if(BORLAND)
 endif(BORLAND)
 
 # Basic tests
-ryppl_test_run(class_properties_test DEPENDS ryppl_unit_test_framework SHARED)
-ryppl_test_run(basic_cstring_test DEPENDS ryppl_unit_test_framework)
+ryppl_test_run(class_properties_test DEPENDS boost_unit_test_framework SHARED)
+ryppl_test_run(basic_cstring_test DEPENDS boost_unit_test_framework)
 
 # Program execution monitor tests
 ryppl_test_run_fail(prg_exec_fail1 DEPENDS ryppl_prg_exec_monitor)
@@ -27,23 +27,23 @@ ryppl_test_run_fail(prg_exec_fail4 DEPENDS ryppl_prg_exec_monitor)
 ryppl_test_run(online_test)
 ryppl_test_run_fail(minimal_test)
 ryppl_test_run(foreach_test)
-ryppl_test_run(output_test_stream_test DEPENDS ryppl_unit_test_framework SHARED)
+ryppl_test_run(output_test_stream_test DEPENDS boost_unit_test_framework SHARED)
 
 # NOTE: skipped result_report_test until I figure out what BBv2 is doing
 
-ryppl_test_run(parameterized_test_test DEPENDS ryppl_unit_test_framework SHARED)
-ryppl_test_run(test_fp_comparisons DEPENDS ryppl_unit_test_framework SHARED)
+ryppl_test_run(parameterized_test_test DEPENDS boost_unit_test_framework SHARED)
+ryppl_test_run(test_fp_comparisons DEPENDS boost_unit_test_framework SHARED)
 
 # NOTE: skipped test_tools_test until I figure out what BBv2 is doing
 
-ryppl_test_run(test_case_template_test DEPENDS ryppl_unit_test_framework SHARED)
+ryppl_test_run(test_case_template_test DEPENDS boost_unit_test_framework SHARED)
 
-ryppl_test_run(custom_exception_test DEPENDS ryppl_unit_test_framework)
+ryppl_test_run(custom_exception_test DEPENDS boost_unit_test_framework)
 
-ryppl_test_run(fixed_mapping_test DEPENDS ryppl_unit_test_framework SHARED)
+ryppl_test_run(fixed_mapping_test DEPENDS boost_unit_test_framework SHARED)
 
 # NOTE: skipped ifstream_line_iterator_test until I figure out what BBv2 is doing
 
-ryppl_test_run(algorithms_test DEPENDS ryppl_unit_test_framework)
-ryppl_test_run(token_iterator_test DEPENDS ryppl_unit_test_framework SHARED)
-ryppl_test_run(ryppl_check_equal_str DEPENDS ryppl_unit_test_framework SHARED)
+ryppl_test_run(algorithms_test DEPENDS boost_unit_test_framework)
+ryppl_test_run(token_iterator_test DEPENDS boost_unit_test_framework SHARED)
+ryppl_test_run(ryppl_check_equal_str DEPENDS boost_unit_test_framework SHARED)
