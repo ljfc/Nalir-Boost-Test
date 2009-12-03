@@ -13,6 +13,6 @@ ryppl_library_project(
   DESCRIPTION  "Support for simple program testing, full unit testing, and for program execution monitoring."
   AUTHORS  "Gennadiy Rozental <gennadiy.rozental -at- gmail.com>"
   #  MAINTAINERS 
-)
+VERSION 1.41.0)
 
 
