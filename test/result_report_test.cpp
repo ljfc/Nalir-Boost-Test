@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2001-2008.
+//  (C) Copyright Gennadiy Rozental 2001-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at 
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -58,6 +58,7 @@ struct log_guard {
 
 void very_bad_foo()  { 
     log_guard lg;
+    ut_detail::ignore_unused_variable_warning( lg );
     onullstream_type null_out;
     unit_test_log.set_stream( null_out );
     BOOST_FAIL( "" );
@@ -105,6 +106,7 @@ struct guard {
 BOOST_AUTO_TEST_CASE( test_result_reports ) 
 {
     guard G;
+    ut_detail::ignore_unused_variable_warning( G );
 
 #define PATTERN_FILE_NAME "result_report_test.pattern"
 

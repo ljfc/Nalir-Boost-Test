@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2001-2008.
+//  (C) Copyright Gennadiy Rozental 2001-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at 
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -18,6 +18,18 @@
 // Boost
 #include <boost/config.hpp> // compilers workarounds
 #include <boost/detail/workaround.hpp>
+
+#if defined(_WIN32) && !defined(BOOST_DISABLE_WIN32) &&                  \
+    (!defined(__COMO__) && !defined(__MWERKS__) && !defined(__GNUC__) || \
+    BOOST_WORKAROUND(__MWERKS__, >= 0x3000))
+#  define BOOST_SEH_BASED_SIGNAL_HANDLING
+#endif
+
+#if defined(__COMO__) && defined(_MSC_VER)
+// eh.h uses type_info without declaring it.
+class type_info;
+#  define BOOST_SEH_BASED_SIGNAL_HANDLING
+#endif
 
 //____________________________________________________________________________//
 
@@ -84,17 +96,12 @@
 #if defined(BOOST_TEST_DYN_LINK)
 #  define BOOST_TEST_ALTERNATIVE_INIT_API
 
-#  if defined(BOOST_HAS_DECLSPEC) && defined(BOOST_TEST_DYN_LINK)
-#    ifdef BOOST_TEST_SOURCE
-#      define BOOST_TEST_DECL __declspec(dllexport)
-#    else
-#      define BOOST_TEST_DECL __declspec(dllimport)
-#    endif  // BOOST_TEST_SOURCE
-#  endif  // BOOST_HAS_DECLSPEC
-#endif  // BOOST_TEST_DYN_LINK
-
-
-#ifndef BOOST_TEST_DECL
+#  ifdef BOOST_TEST_SOURCE
+#    define BOOST_TEST_DECL BOOST_SYMBOL_EXPORT
+#  else
+#    define BOOST_TEST_DECL BOOST_SYMBOL_IMPORT
+#  endif  // BOOST_TEST_SOURCE
+#else
 #  define BOOST_TEST_DECL
 #endif
 

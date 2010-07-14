@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2005-2008.
+//  (C) Copyright Gennadiy Rozental 2005-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at 
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -20,6 +20,10 @@
 
 #include <boost/test/utils/callback.hpp>
 #include <boost/test/utils/basic_cstring/basic_cstring.hpp>
+#include <boost/test/unit_test_suite.hpp>
+
+// Boost
+#include <boost/bind.hpp>
 
 // STL
 #include <memory>

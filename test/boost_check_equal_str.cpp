@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2001-2008.
+//  (C) Copyright Gennadiy Rozental 2001-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at 
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -19,8 +19,8 @@ BOOST_AUTO_TEST_CASE( check_string_compare )
 {
     char const* buf_ptr_cch     = "abc";
     char const  buf_array_cch[] = "abc";
-    char*       buf_ptr_ch      = "abc";
     char        buf_array_ch[]  = "abc";
+    char*       buf_ptr_ch      = buf_array_ch;
     std::string buf_str         = "abc";
 
     BOOST_CHECK_EQUAL(buf_ptr_cch, buf_ptr_cch);

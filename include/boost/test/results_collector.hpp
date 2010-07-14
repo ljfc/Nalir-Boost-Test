@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2001-2008.
+//  (C) Copyright Gennadiy Rozental 2001-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at 
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -90,6 +90,8 @@ public:
 
     void                assertion_result( bool passed );
     void                exception_caught( execution_exception const& );
+
+    virtual int         priority() { return 2; }
 
     // results access
     test_results const& results( test_unit_id ) const;

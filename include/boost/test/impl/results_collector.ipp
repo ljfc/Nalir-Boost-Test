@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2005-2008.
+//  (C) Copyright Gennadiy Rozental 2005-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -215,9 +215,9 @@ results_collector_t::test_unit_finish( test_unit const& tu, unsigned long )
         if( !num_failures_match )
             BOOST_TEST_MESSAGE( "Test case " << tu.p_name << " has fewer failures than expected" );
 
-        bool run_any_assertions = tr.p_aborted || (tr.p_assertions_failed != 0) || (tr.p_assertions_passed != 0);
-        if( !run_any_assertions )
-            BOOST_TEST_MESSAGE( "Test case " << tu.p_name << " did not run any assertions" );
+        bool check_any_assertions = tr.p_aborted || (tr.p_assertions_failed != 0) || (tr.p_assertions_passed != 0);
+        if( !check_any_assertions )
+            BOOST_TEST_MESSAGE( "Test case " << tu.p_name << " did not check any assertions" );
     }
 }
 

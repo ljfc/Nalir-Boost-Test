@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2005-2008.
+//  (C) Copyright Gennadiy Rozental 2005-2010.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at
 //  http://www.boost.org/LICENSE_1_0.txt)
@@ -124,13 +124,14 @@ public:
     void            clear()
     {
         while( !m_test_units.empty() ) {
-            test_unit_store::value_type const& tu = *m_test_units.begin();
+            test_unit_store::value_type const& tu     = *m_test_units.begin();
+            test_unit const*                   tu_ptr = tu.second;
 
             // the delete will erase this element from map
             if( ut_detail::test_id_2_unit_type( tu.second->p_id ) == tut_suite )
-                delete  static_cast<test_suite const*>(tu.second);
+                delete static_cast<test_suite const*>(tu_ptr);
             else
-                delete  static_cast<test_case const*>(tu.second);
+                delete static_cast<test_case const*>(tu_ptr);
         }
     }
 
@@ -161,7 +162,7 @@ public:
                 to->test_aborted();
         }
 
-        BOOST_TEST_FOREACH( test_observer*, to, m_observers )
+        BOOST_TEST_REVERSE_FOREACH( test_observer*, to, m_observers )
             to->test_unit_finish( tc, elapsed );
 
         m_curr_test_case = bkup;
@@ -187,7 +188,7 @@ public:
 
     void            test_suite_finish( test_suite const& ts )
     {
-        BOOST_TEST_FOREACH( test_observer*, to, m_observers )
+        BOOST_TEST_REVERSE_FOREACH( test_observer*, to, m_observers )
             to->test_unit_finish( ts, 0 );
     }
 
@@ -445,7 +446,7 @@ run( test_unit_id id, bool continue_test )
     }
 
     if( call_start_finish ) {
-        BOOST_TEST_FOREACH( test_observer*, to, s_frk_impl().m_observers )
+        BOOST_TEST_REVERSE_FOREACH( test_observer*, to, s_frk_impl().m_observers )
             to->test_finish();
     }
 

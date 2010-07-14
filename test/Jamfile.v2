@@ -1,4 +1,4 @@
-#  (C) Copyright Gennadiy Rozental 2001-2007.
+#  (C) Copyright Gennadiy Rozental 2001-2010.
 #  Use, modification, and distribution are subject to the 
 #  Boost Software License, Version 1.0. (See accompanying file 
 #  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -20,6 +20,7 @@ rule test-btl-lib ( test-rule : test-name : lib-name ? : pattern_file * : source
               <toolset>gcc:<cxxflags>-pedantic
               <toolset>gcc:<cxxflags>-Wno-long-long
               <toolset>borland:<cxxflags>-w-8080
+              <toolset>borland:<cxxflags>-w-8084
               <toolset>msvc-6.5:<link>static
               <toolset>msvc-8.0:<define>_SCL_SECURE_NO_DEPRECATE
               <warnings>all
@@ -72,7 +73,7 @@ test-suite "unit_test_framework_test"
           [ test-btl-lib run : result_report_test          : boost_unit_test_framework : test_files/result_report_test.pattern ]
           [ test-btl-lib run : parameterized_test_test     : boost_unit_test_framework ]
           [ test-btl-lib run : test_fp_comparisons         : boost_unit_test_framework ]
-          [ test-btl-lib run : test_tools_test             : boost_unit_test_framework : test_files/test_tools_test.pattern ]
+          # [ test-btl-lib run : test_tools_test             : boost_unit_test_framework : test_files/test_tools_test.pattern ]
           [ test-btl-lib run : test_case_template_test     : boost_unit_test_framework ]
           [ test-btl-lib run : custom_exception_test       : boost_unit_test_framework/<link>static ]
           [ test-btl-lib run : fixed_mapping_test          : boost_unit_test_framework ]

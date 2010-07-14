@@ -1,4 +1,4 @@
-//  (C) Copyright Gennadiy Rozental 2001-2008.
+//  (C) Copyright Gennadiy Rozental 2001-2010.
 //  (C) Copyright Gennadiy Rozental & Ullrich Koethe 2001.
 //  Distributed under the Boost Software License, Version 1.0.
 //  (See accompanying file LICENSE_1_0.txt or copy at 
@@ -10,8 +10,8 @@
 #include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 using namespace boost::unit_test;
-using boost::test_tools::close_at_tolerance;
-using boost::test_tools::percent_tolerance;
+using boost::math::fpc::close_at_tolerance;
+using boost::math::fpc::percent_tolerance;
 
 // BOOST
 #include <boost/lexical_cast.hpp>
