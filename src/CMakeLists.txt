@@ -42,6 +42,7 @@ ryppl_add_library(boost_test_exec_monitor
   unit_test_suite.cpp
   xml_log_formatter.cpp
   xml_report_formatter.cpp
+  NO_SHARED
   )
 
 ryppl_add_library(boost_unit_test_framework
