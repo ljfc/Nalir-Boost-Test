@@ -1,0 +1,34 @@
+Metadata-Version: 1.2
+Name: boost-test
+Version: 1.44.0.dev0
+Summary: Some summary goes here
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: Boost License 1.0
+Keywords: some keywords
+Requires-Dist: boost-cmake
+Requires-Dist: boost-preprocessor
+Requires-Dist: boost-exception
+Requires-Dist: boost-timer
+Requires-Dist: boost-detail
+Requires-Dist: boost-conversion
+Requires-Dist: boost-config
+Requires-Dist: boost-thread
+Requires-Dist: boost-type_traits
+Requires-Dist: boost-utility
+Requires-Dist: boost-static_assert
+Requires-Dist: boost-bind
+Requires-Dist: boost-optional
+Requires-Dist: boost-iterator
+Requires-Dist: boost-core
+Requires-Dist: boost-numeric
+Requires-Dist: boost-smart_ptr
+Requires-Dist: boost-functional
+Requires-Dist: boost-mpl
+Requires-Dist: boost-io
+Platform: UNKNOWN
+Description: boost-test
+       |=======
+       |
+       |No long description yet.
